@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100&display=swap');
+
+body{
+    font-family: 'Inter', sans-serif;
+    font-family: 'Work Sans', sans-serif;
+}
+.container{
+    margin: 5rem 3rem ;
+}
+header{
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    display: flex;
+}
+
+.menu{
+    cursor: pointer;
+}
+.nav-show{
+    right: 0;
+}
+nav{
+    position: fixed;
+    background-color: #ffffff;
+    width: 30vh;
+    height: 100vh;
+    right: -100%;
+    top: 0;
+    z-index: 100;
+    transition: .2s ease-in-out;
+}
+.backdrop{
+    display: none;
+    position:fixed;
+    width: 1000%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    background-color: #0000005f;
+    transition: .2s ease-in-out;
+}
+.exit-btn{
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    cursor: pointer;
+}
+nav ul{
+    padding-top: 5rem;
+}
+nav ul li {
+    list-style: none;
+    line-height: 3.5rem;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #000000;
+    font-size: clamp(16px,22px,26px);
+}
+nav ul li a:hover{
+    color:#ff3c3c;
+}
+article{
+    background: rgb(249, 255, 249);
+} 
+
+/* 
+*/
+
+.cards_grid{
+    display: grid;
+    gap: 2rem;
+    grid-auto-columns: 1fr;
+    grid-template-areas: 
+    'one'
+    'two'
+    'three';
+}
+
+.card:nth-child(1){
+    grid-area: one;
+}
+.img-l{
+    max-width:100%;
+    height: 350px;
+    margin-bottom: 30px;
+}
+.img-l img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.text-container-1{
+    font-size: clamp(2em,3vw,5.5em);
+}
+.text-container-1 h1{
+    margin:0;
+    letter-spacing: -5px;
+}
+.text-2{
+    font-size: clamp(1em,1.2vw,2em);
+    line-height: clamp(1.2em,2vw,2em);
+    color: #454545;
+}
+.text-container-2 button{
+    padding: 15px 30px 15px 30px;
+    border-radius: 0px;
+    border: none;
+    font-size: large;
+    font-weight: 600;
+    letter-spacing: 5px;
+    background-color: #ff3c3c;
+    color: #fff;
+}
+.text-container-2 button:hover{
+    background-color: #000028;
+    cursor: pointer;
+}
+
+.card:nth-child(2){
+    grid-area: two;
+    background-color:#000028 ;
+    color: #fff;
+    padding: 20px 50px 20px 50px;
+}
+.card:nth-child(2) h1{
+    color: #D9BC02;
+    font-size: 3em;
+}
+.new{
+    border-bottom:1px solid rgba(255, 255, 255, 0.303) ;
+    padding-bottom:25px;
+}
+.new h2{
+    font-size:clamp( 1.6em,1vw,2.5em);
+    font-weight: 900;
+}
+.new h2:hover{
+    color:#D9BC02;
+    cursor: pointer;
+}
+.new p{
+    font-size: clamp(12px,90%,22px);
+}
+.new:last-child{
+    border-bottom:none;
+}
+
+.card:nth-child(3){
+    grid-area: three;
+    
+}
+.sub-card{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+    margin: 2rem 0 2rem 0;
+}
+.sub-card div img{
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sub-card-text h1{
+    color: #bbbbbb;
+    font-size: clamp(3em,4vw,5em);
+    margin: 0;
+}
+.sub-card-text h4{
+    margin: 0;
+    font-size: 1.5em;
+}
+.sub-card p{
+    font-size: 1.1em;
+}
+@media (min-width:35em){
+    .sub-card{
+        grid-template-columns: auto 1fr;
+    }
+}
+@media(min-width:80em){
+    body{
+        max-height: 100vh;
+        margin: 5rem 10rem;
+    }
+    .flex{
+        display: flex;
+    }
+    .exit-btn{
+        display: none;
+    }
+    .menu{
+        display: none;
+    }
+    nav{
+        position: inherit;
+        background-color:inherit;
+        width: inherit;
+        height: inherit;
+        right: inherit;
+        top: inherit;
+        transition:inherit;
+    }
+    nav ul{
+        padding-top: inherit;
+    }
+    nav ul li {
+        margin-left: 30px;
+        list-style: none;
+        line-height: inherit;
+    }
+    nav ul li a{
+        text-decoration: none;
+        font-size: clamp(16px,22px,26px);
+    }
+    .cards_grid{
+        grid-template-areas: 
+        'one one two'
+        'three three three';
+    }
+    .text-container-1{
+        max-width: 50%;
+        margin-right: 10px;
+    }
+    .text-container-2{
+        max-width: 50%;
+        position: relative;
+    }
+    .text-container-2 button{
+        position: absolute;
+        bottom: 0px;
+    }
+    .sub-card{
+        margin-right: 1rem;
+    }
+}
+
+.attribution{
+    background-color: #000028;
+    color: #fff;
+    padding: 30px;
+}
+.attribution a{
+    color: #ff3c3c;
+}
